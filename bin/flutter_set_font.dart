@@ -100,7 +100,7 @@ Future<void> updatePubspecFile(
     fileHad = await joinText(fileHad, element, gap: false);
   }
   String fileBody = '''
- $fileHad
+$fileHad
   fonts:
 
 $yamlVariables
