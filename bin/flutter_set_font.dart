@@ -40,9 +40,13 @@ void main(List<String> arguments) async {
   print('Fonts Variables set in "app_fonts.dart" file. \u2713');
   await updatePubspecFile('fonts', yamlVariables);
   print('Fonts Variables set in "pubspec.yaml" file. \u2713\n');
-  print('Please run "flutter pub get" to the update YAML file.\n');
-  print(await Process.runSync('C:\\flutter\\bin\\flutter.bat', ['pub', 'get'])
-      .stdout);
+  print('Flutter Pub Get Process Started... ');
+
+  final process =
+  Process.runSync('C:\\flutter\\bin\\flutter.bat', ['pub', 'get']);
+  print(await process.stdout);
+  print(await process.stderr);
+  print('Process Exit Code ${process.exitCode}');
   print('Program Finished.\n');
 }
 
