@@ -41,6 +41,8 @@ void main(List<String> arguments) async {
   await updatePubspecFile('fonts', yamlVariables);
   print('Fonts Variables set in "pubspec.yaml" file. \u2713\n');
   print('Please run "flutter pub get" to the update YAML file.\n');
+  print(await Process.runSync('C:\\flutter\\bin\\flutter.bat', ['pub', 'get'])
+      .stdout);
   print('Program Finished.\n');
 }
 
